@@ -1,11 +1,10 @@
 {
 	"id": "wallabag-sync",
 	"name": "Wallabag Sync",
-	"version": "1.0.0",
-	"minAppVersion": "1.11.4",
-	"description": "Sync your Wallabag articles and highlights with Obsidian.",
-	"author": "Obsidian",
+	"version": "0.1.0",
+	"minAppVersion": "1.11.0",
+	"description": "Sync your wallabags highlight/notes with Obsidian.",
+	"author": "Jhonat",
 	"authorUrl": "https://web.jhx.homes",
-	"fundingUrl": "https://obsidian.md/pricing",
 	"isDesktopOnly": false
 }
