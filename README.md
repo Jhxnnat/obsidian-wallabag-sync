@@ -1,7 +1,7 @@
 # Wallabag Sync
 
 > [!NOTE]
-> All of this is inspired the official Instapaper Plugin: https://github.com/Instapaper/obsidian-instapaper/
+> All of this is inspired by the official Instapaper Plugin: https://github.com/Instapaper/obsidian-instapaper/
 
 This plugin lets you sync your wallabags highlight/notes with your notes.
 After you config the credentials you can run the **Wallabag Sync: Run now** command from the command palette.
