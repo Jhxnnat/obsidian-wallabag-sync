@@ -50,7 +50,9 @@ export default class WallabagSyncPlugin extends Plugin {
 			const result = await syncNotes(this);
 			progress.hide();
 			const count = result.count;
-			new Notice(`wallabag sync: ${count} changes`);
+			let message = "updates"
+			if (count < 2) message = "update"
+			new Notice(`${count} ${message}...`);
 		} catch (error) {
 			progress.hide();
 			new Notice(`wallabag: ${this.errorMessage(error)}`);

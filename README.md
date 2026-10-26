@@ -1,5 +1,8 @@
 # Wallabag Sync
 
+> [!NOTE]
+> All of this is inspired the official Instapaper Plugin: https://github.com/Instapaper/obsidian-instapaper/
+
 This plugin lets you sync your wallabags highlight/notes with your notes.
 After you config the credentials you can run the **Wallabag Sync: Run now** command from the command palette.
 
@@ -22,10 +25,9 @@ Notes get the following properties:
 - {{created}} - When the highlight was created
 - {{updated}} - When the highlight was last updated
 
-Conditional sections are supported, for example `{{#note}}...{{/note}}` renders
-only when a note exists.
+Checkout [Mustache](https://mustache.github.io/) to see more.
 
-the default is:
+default template:
 ```
 > {{text}} {{blockId}}
 {{#note}}
@@ -34,8 +36,11 @@ the default is:
 {{/note}}
 ```
 
-Annotations are identified by the blockId.
-All of this is inspired the official Instapaper Plugin: https://github.com/Instapaper/obsidian-instapaper/
+Annotations are identified by the blockId, Mustache does it all.
+
+# Properties
+
+> WIP!!
 
 # TODO
 - add link to guide on how to setup clientId/secret on settings
@@ -47,3 +52,4 @@ All of this is inspired the official Instapaper Plugin: https://github.com/Insta
 - add script to build and copy the plugin into my actual vault??
 - new settings api thingy
 - update notesFolder setting if folder is renamed
+- refresh token expired bug -> auto connect

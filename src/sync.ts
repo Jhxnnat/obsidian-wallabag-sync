@@ -24,8 +24,8 @@ export async function syncNotes(plugin: WallabagSyncPlugin): Promise<{count: num
 					}
 				)).filter((block) => block.text.length > 0);
 
-			await writeNote(plugin.app, folder, entry, blocks);
-			count++;
+			let _count = await writeNote(plugin.app, folder, entry, blocks);
+			count += _count.count;
 		} catch (error) {
 			new Notice(`${entry.title || entry.id}: ${message(error)}`);
 		}
@@ -45,7 +45,7 @@ async function writeNote(
 
 	if (existing instanceof TFile) {
 		const content = await app.vault.read(existing);
-		return updateHightlights(app, existing, content, entry, blocks);
+		return updateHightlights(app, existing, content, blocks);
 	}
 	if (existing) { // its a directory
 		throw new Error(`"${path}" exists and is not a note.`);
@@ -54,13 +54,10 @@ async function writeNote(
 	return {count: 1};
 }
 
-// TODO: check by blockId: ^h{id} ?
-// ISSUE: this does not update notes
 async function updateHightlights(
 	app: App,
 	file: TFile,
 	content: string,
-	entry: WallabagEntry,
 	blocks: HighlightBlock[],
 ): Promise<{ count: number }> {
 	let count: number = 0;
